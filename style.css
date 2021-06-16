@@ -1,4 +1,85 @@
 h1 {
+    color: #FF9900;
+    margin-top: 30px; 
+}
+body {
+    margin: 5% 20%;
+}
+
+.city {
+   border: 3px solid #999999;
+   background-color: #CCCCCC;
+   }
+
+.search {
+    border: 3px solid #FF9900;
+    background-color: #FFC65D;
+    border-radius: 7px;
+}
+
+.card-title-today {
+    text-align: left;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.card {
+    padding: 20px;
+    height: 300px;
+    border: 3px solid;
     text-align: center;
-    color: red;
+}
+
+p {
+    margin: 5px auto;
+    font-weight: bold;
+}
+
+.card.today {
+    border: 3px solid #FFC65D;
+    background-color: #ffe0a7;
+}
+
+.card.night {
+    border: 3px solid #999999;
+    background-color: #CCCCCC;
+}
+
+.card.tomorrow {
+    border: 3px solid #FF9900;
+    background-color: #FFC65D;
+}
+
+.fa-cloud-rain,
+.fa-cloud-moon-rain,
+.fa-cloud-sun-rain {
+    color: blueviolet;
+    font-size: 70px;
+    margin: 10px auto;
+    text-align: center;
+    display: block;  
+}
+
+.fa-cloud-rain {
+    font-size: 90px;
+}
+
+span {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.days {
+    border: 3px solid #999999;
+    text-align: center;
+    background-color: #CCCCCC;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 10px;
+    width: 70%;
+}
+
+.days .fa-cloud-sun-rain {
+    font-size: 30px;
 }
