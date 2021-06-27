@@ -83,3 +83,8 @@ span {
 .days .fa-cloud-sun-rain {
     font-size: 30px;
 }
+
+#github {
+    margin: 50px;
+    text-align: center;
+}
