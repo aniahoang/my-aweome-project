@@ -17,6 +17,7 @@ function startingCity(response) {
   let cityNow = response.data.name.toUpperCase();
   document.querySelector("h1").innerHTML = cityNow;
 }
+
 function startingTemp(response) {
   let tempNow = Math.round(response.data.main.temp);
   document.querySelector("#temp").innerHTML = tempNow;
@@ -31,6 +32,10 @@ function startingTemp(response) {
     celciusNow.addEventListener("click", changeCelciusNow);
     function changeCelciusNow () {
       document.querySelector("#temp").innerHTML = tempNow;
+
+      let descriptionElement = document.querySelector("#description");
+      descriptionElement.innerHTML = response.data.weather[0].description;
+      console.log(response.data.weather[0].description)
     }
   }
 }
@@ -46,6 +51,14 @@ function showTemperature(response) {
  let temperature = Math.round(response.data.main.temp);
  document.querySelector("#temp").innerHTML = temperature;
 
+ let descriptionElement = document.querySelector("#description");
+ descriptionElement.innerHTML = response.data.weather[0].description;
+ let windspeedElement = document.querySelector("#windspeed");
+ windspeedElement.innerHTML = Math.round(response.data.wind.speed);
+ let humidityElement = document.querySelector("#humidity");
+ humidityElement.innerHTML = response.data.main.humidity;
+ console.log(response.data);
+
  let unitFah = document.querySelector("#faren");
  unitFah.addEventListener("click", convertFah);
  function convertFah() {
@@ -59,6 +72,7 @@ function showTemperature(response) {
     }
   }
 }
+axios.get(apiUrl).then(showTemperature)
 
 function searchCity(event) {
   event.preventDefault();
@@ -106,4 +120,5 @@ function locate() {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 let button = document.querySelector("button");
-button.addEventListener("click", locate)
+button.addEventListener("click", locate);
+
