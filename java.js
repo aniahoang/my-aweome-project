@@ -42,7 +42,6 @@ function startingTemp(response) {
   let apiKey = "c3b8cc35d84d429bedaca22aa25cdef0";
   let startCity = "Oviedo";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${startCity}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(startingCity);
   axios.get(apiUrl).then(startingTemp);
 
@@ -57,7 +56,9 @@ function showTemperature(response) {
  windspeedElement.innerHTML = Math.round(response.data.wind.speed);
  let humidityElement = document.querySelector("#humidity");
  humidityElement.innerHTML = response.data.main.humidity;
- console.log(response.data);
+ let iconElement = document.querySelector("#icon");
+ iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+ console.log(response.data.weather[0].icon)
 
  let unitFah = document.querySelector("#faren");
  unitFah.addEventListener("click", convertFah);
